@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "e47100b8-435c-463f-b987-1b15e97205af",
+		"name": "football leaderboard test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/team",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clubname\":\"chelsea\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/football/leaguestanding",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/football/leaguestanding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"football",
+						"leaguestanding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/football/rank?clubname=barcelona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/football/rank?clubname=barcelona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"football",
+						"rank"
+					],
+					"query": [
+						{
+							"key": "clubname",
+							"value": "barcelona"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/football/recordgame",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsImlzQWRtaW4iOmZhbHNlLCJpc1VzZXIiOnRydWUsImlhdCI6MTU4OTI4NjE2NywiZXhwIjoxNTg5MzcyNTY3fQ.vH5uChdSXpxsF5ZZfm3Qc5DV9nYC1kvT8wQOp9Kil0U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clubhomename\":\"barcelona\",\n\t\"clubawayname\":\"real madrid\",\n\t\"score\":\"4:3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/football/recordgame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"football",
+						"recordgame"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
